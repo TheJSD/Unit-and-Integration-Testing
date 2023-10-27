@@ -98,11 +98,22 @@ function App() {
     setCalculatedTotal(calculatedNumber);
   }
 
+  // const CalcDisplay = () => {
+  //   return ('Hello World')
+  // }
+
+  const CalcDisplay = () => {
+    if (runningTotal == "Infinity") {
+      return "Cannot Calculate"
+    } else {
+      return runningTotal
+    }
+  }
 
   return (
     <div className="container">
     <div className="calculator">
-      <div data-testid="running-total" id="running-total" className="display">{ runningTotal }</div>
+      <div data-testid="running-total" id="running-total" className="display"><CalcDisplay/></div>
       <KeyPad 
       handleNumber={numberClick} 
       handleOperator={operatorClick} 
